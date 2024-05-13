@@ -20,10 +20,10 @@ spec:
         env:
         - name: PORT
           value: "3001"
-        - name: GOOGLE_APPLICATION_CREDENTIALS
+        - name: GOOGLE_APPLICATION_CREDENTIALS # Path to the google application credentials for vertex ai llm model
           value: "/app/credentials.json"
-        - name: CV_FILE_PATH
+        - name: CV_FILE_PATH # Path to the cv file to use in RAG
           value: "/app/NayYaung_CV_2024_JK.docx"
-        - name: API_KEY
+        - name: API_KEY # Api key for react client to access this backend. NOT the api key for google vertex ai
           value: "AIzaSyD12"
         imagePullPolicy: Always

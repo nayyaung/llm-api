@@ -2,10 +2,12 @@ FROM node:22.1.0-alpine3.19
 WORKDIR /app
 
 ENV PORT=3001
-ENV GOOGLE_APPLICATION_CREDENTIALS=/app/credentials.json
-ENV CV_FILE_PATH=/app/NayYaung_CV_2024_JK.docx
 
-# In a production environment, it would have been a secret (k8s or docker swarm or any cloud secret api such as google secret-manager)
+# Path to the google application credentials for vertex ai llm model
+ENV GOOGLE_APPLICATION_CREDENTIALS=/app/credentials.json
+# Path to the cv file to use in RAG
+ENV CV_FILE_PATH=/app/NayYaung_CV_2024_JK.docx
+# Api key for react client to access this backend api. NOT the api key for google vertex ai
 ENV API_KEY=AIzaSyD12
 
 RUN apk add --update python3 make g++\
