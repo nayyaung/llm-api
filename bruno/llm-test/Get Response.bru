@@ -1,0 +1,21 @@
+meta {
+  name: Get Response
+  type: http
+  seq: 2
+}
+
+post {
+  url: http://localhost:3001/result
+  body: json
+  auth: none
+}
+
+headers {
+  X-API-KEY: REPLACE_WITH_API_KEY
+}
+
+body:json {
+  {
+    "question" : "Describe Nay Yaung"
+  }
+}

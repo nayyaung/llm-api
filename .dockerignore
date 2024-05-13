@@ -1,0 +1,8 @@
+bruno
+node_modules
+npm-debug.log
+Dockerfile
+.dockerignore
+data\vectorstore.hnsw
+makefile
+.env

@@ -1,0 +1,11 @@
+version: '3'
+services:
+  app:
+    build: .
+    ports:
+      - "3001:3001"
+    environment:
+      - PORT=3001
+      - GOOGLE_APPLICATION_CREDENTIALS=/app/credentials.json
+      - CV_FILE_PATH=/app/NayYaung_CV_2024_JK.docx
+      - API_KEY=AIzaSyD12 # In a production environment, it would have been a secret (k8s or docker swarm or any cloud secret api such as google secret-manager)
