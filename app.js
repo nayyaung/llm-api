@@ -4,11 +4,24 @@ const cors = require('cors');
 const jsonErrorHandler = require('./errorHandler');
 const router = require('./routes/routers');
 const apiKeyMiddleware = require('./controller/auth-middleware');
+const app = express();
 
 require('dotenv').config();
- 
-const app = express();
-app.use(cors());
+
+const allowedOrigins = process.env.ALLOWED_ORIGINS ? process.env.ALLOWED_ORIGINS.split(',') : [];
+const corsOptions = {
+    origin: function (origin, callback) {
+        if (!origin || allowedOrigins.indexOf(origin) !== -1) {
+            callback(null, true);
+        } else {
+            var msg = 'The CORS policy for this site does not allow access from the specified Origin.';
+            return callback(new Error(msg), false);
+        }
+    }
+}
+
+app.use(cors(corsOptions));
+
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 

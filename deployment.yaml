@@ -26,4 +26,6 @@ spec:
           value: "/app/NayYaung_CV_2024_JK.docx"
         - name: API_KEY # Api key for react client to access this backend. NOT the api key for google vertex ai
           value: "AIzaSyD12"
+        - name: ALLOWED_ORIGINS
+          value: "https://llm-chat-ui-4z2z62ou5a-as.a.run.app"
         imagePullPolicy: Always

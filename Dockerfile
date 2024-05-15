@@ -10,6 +10,8 @@ ENV CV_FILE_PATH=/app/NayYaung_CV_2024_JK.docx
 # Api key for react client to access this backend api. NOT the api key for google vertex ai
 ENV API_KEY=AIzaSyD12
 
+ENV ALLOWED_ORIGINS=https://llm-chat-ui-4z2z62ou5a-as.a.run.app
+
 RUN apk add --update python3 make g++\
    && rm -rf /var/cache/apk/*
 

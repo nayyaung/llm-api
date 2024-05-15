@@ -33,4 +33,9 @@ deploy-service:
 port-forward:
 	kubectl port-forward svc/$(IMAGE_NAME) 3001:3001
 
+clean:
+	docker rmi $(IMAGE_NAME)
+
 deploy-k8s: rebuild push deploy deploy-service
+
+push-gcp: clean rebuild push-to-gcp
